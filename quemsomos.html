@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- requisitos especificos
+Jquery : utilizar um scroll que a partir de  400px do topo do body apareça uma seta ao lado direito da pagina que funciona como retorno suave para o inicio da pagina , aplicar essa função na pagina inicial do projeto.
+JavaScript: validações.
+Css: Estilizar o rodapé usando exclusivamente css.
+HTML: Utilizar <aside> e <article> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ################### boostrap 4.6 ##################-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- #####################boostrap fim ##########-->
+  <!-- CND PARA OS ICONES -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- private CSS -->
+  <link rel="stylesheet" href="./css/naturastyle.css">
+  <title>Quem somos</title>
+</head>
+
+<body>
+  <section class="container-fluid">
+    <!-- ########### cabecalho ###################### -->
+    <header id="cabecalho" class="row">
+      <!-- brocolis logo,com nav BRAND -->
+      <a class="navbar-brand" href="index.html"><img id="logo-brocolis" class="img-fluid" src="./imagens/brocolis.png"
+          alt="brocolis"></a>
+      <!-- soul Natura logo -->
+      <img class="img-fluid" src="./imagens/SoulcodenaturaNome.png" alt="nomelogo">
+      <!-- icone carrinho -->
+      <div>
+        <a href="carrinho.html">
+          <i id="carrinho_icone" class="bi bi-cart-fill carrinho text-danger">
+            <span id="badge-carrinho" class="badge badge-light">0</span>
+          </i>
+        </a>
+      </div><!-- carrinho-->
+      <!-- darkmode icone -->
+      <div>
+        <span id="darkmode" alt="dark mode">
+          <i class="bi bi-moon-fill"></i>
+        </span>
+      </div>
+    </header>
+    <!--############## barra de navegacao  #############  -->
+    <div class="row">
+      <nav id="barra-navegacao" class="navbar navbar-expand-lg col-12 ">
+        <!-- NAV-EXPAND-LG  , PARA TELAS GRANDES EXPANDE O MENU, PORQUE BOOTSTRAP E "MOBILE FIRST"-->
+        <!-- <a class="navbar-brand text-white" href="#">Navbar</a> -->
+        <!-- botao hamburguer -->
+        <button id="botao-hamburguer" class="navbar-toggler border-primary" type="button" data-toggle="collapse"
+          data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+          aria-label="Alterna navegação">
+          <!-- icone hamburguer -->
+          <span class="navbar-toggler-icon"><i class="bi bi-list text-white"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+              <!-- <img src="./imagens/house-door-fill.svg" alt="Home"> -->
+              <a class="nav-link text-white" href="./index.html"><i
+                  class="bi bi-house-door-fill text-warning mr-1"></i>Home <span class="sr-only">(página
+                  atual)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-white" href="./quemsomos.html"><i
+                  class="bi bi-people-fill  text-warning mr-1"></i>Quem
+                somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-white" href="./cadastro.html"><i
+                  class="bi bi-newspaper text-warning mr-1"></i>Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-white" href="./parceiros.html"><i
+                  class="bi bi-building text-warning mr-1"></i>Parceiros</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Produtos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Verduras</a>
+                <a class="dropdown-item" href="#">Frutas</a>
+                <a class="dropdown-item" href="#">Hortaliças</a>
+                <a class="dropdown-item" href="./sucos.html">Sucos</a>
+            </li>
+            <!-- suporte -->
+            <li class="nav-item">
+              <a class="nav-link  text-white" href="./suporte.html"><i
+                  class="bi bi-building text-warning mr-1"></i>Suporte</a>
+            </li>
+          </ul>
+          <!-- formul de peesquisa -->
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-warning my-2 my-sm-0" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </nav>
+      <!-- ############### FIM BARRA DE NAVEGACAO ############################-->
+    </div>
+    <!--row-->
+    <div class="row">
+      <!--################ MAIN  principal ###########################-->
+      <main id="principal" class="col">
+
+        <!-- sobre nos -->
+        <section class="col text-justify">
+          <h3 class="mt-5">Um pouco da nossa história</h3>
+          <article class="col text-justify my-5">A Soul Natura produtos in natura fundada em 1980, é uma empresa e na
+            sua
+            essência uma prestadora de serviços especializados na área de produtos in natura com consultoria no segmento
+            de nutrição, marketing, administração, comercial e gestão de negócio. Entendemos que nossas lojas deverão
+            acompanhar as tendências de mercado, passando obrigatoriamente por um melhor nível de serviço onde
+            incluem-se, capacitação de seus colaboradores e melhores mix de produtos com preços competitivos.
+          </article>
+          <article class="col text-justify my-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis
+            repudiandae delectus quisquam cumque culpa ad iusto illum optio nesciunt ipsum? A voluptatem illum
+            consequuntur blanditiis aliquam excepturi nisi corrupti porro.
+            Laboriosam sit iste earum praesentium, est laborum fugit expedita vitae hic ad repellat ducimus nostrum
+            itaque cum architecto, voluptatibus aut illum incidunt, vel consectetur. Iure eaque velit eos quas qui!
+            Quasi, cupiditate nostrum dicta odit necessitatibus quia deserunt eius, ipsum nemo ex repudiandae suscipit
+            maxime vel facere soluta aut quas, nesciunt corporis architecto cumque aliquid? Laboriosam labore commodi
+            magnam unde.
+          </article>
+          <h3>Missão</h3>
+          <article class="col text-justify my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+            dolores quis, dicta voluptas nesciunt perspiciatis architecto soluta veritatis nulla placeat corrupti
+            eveniet nobis iste aliquam eos iusto facere quisquam quaerat.
+            Sed dicta mollitia iusto quis sunt fuga repellendus aliquid quaerat nemo autem illum est, eum non libero
+            delectus, obcaecati explicabo. Sint dolor et iusto ullam? Nam debitis pariatur facilis fuga.
+            Architecto reiciendis asperiores eum nulla alias molestias et, dolore praesentium quidem molestiae amet
+            expedita consectetur. Nesciunt sed, veritatis exercitationem, tempora laborum iure hic veniam sequi eligendi
+            mollitia a vel sit.
+            Architecto, nam nulla. Autem, nemo. Id, rerum animi totam dolore nulla officiis quibusdam ut voluptatibus
+            quo architecto facilis harum incidunt est deleniti nesciunt, culpa consectetur sequi tempore. Vero, nobis
+            molestias?
+            Velit doloremque maxime excepturi exercitationem officia voluptate esse laboriosam fugit, illum praesentium,
+            mollitia dolorem. Dolorem autem nesciunt atque unde corporis esse obcaecati eum odio cum alias! Maxime
+            repellendus architecto nostrum.
+          </article>
+          <br>
+          <h3>Valores</h3>
+          <article class="col text-justify my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+            dolores quis, dicta voluptas nesciunt perspiciatis architecto soluta veritatis nulla placeat corrupti
+            eveniet nobis iste aliquam eos iusto facere quisquam quaerat.
+            Sed dicta mollitia iusto quis sunt fuga repellendus aliquid quaerat nemo autem illum est, eum non libero
+            delectus, obcaecati explicabo. Sint dolor et iusto ullam? Nam debitis pariatur facilis fuga.
+            Architecto reiciendis asperiores eum nulla alias molestias et, dolore praesentium quidem molestiae amet
+            expedita consectetur. Nesciunt sed, veritatis exercitationem, tempora laborum iure hic veniam sequi eligendi
+            mollitia a vel sit.
+            Architecto, nam nulla. Autem, nemo. Id, rerum animi totam dolore nulla officiis quibusdam ut voluptatibus
+            quo architecto facilis harum incidunt est deleniti nesciunt, culpa consectetur sequi tempore. Vero, nobis
+            molestias?
+            Velit doloremque maxime excepturi exercitationem officia voluptate esse laboriosam fugit, illum praesentium,
+            mollitia dolorem. Dolorem autem nesciunt atque unde corporis esse obcaecati eum odio cum alias! Maxime
+            repellendus architecto nostrum.
+          </article>
+
+        </section>
+        <!-- fotos fundadores -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="sobre_fundadores">
+              <img class="quemsomos_img" src="./imagens/person1.jfif" alt="Fundador 01">
+              <p>Himesh Chopra</p>
+              <p>Logistica</p>
+            </div>
+            <div class="sobre_fundadores">
+              <img class="quemsomos_img" src="./imagens/person2.jfif" alt="Fundador 02">
+              <p>Roberta Silva</p>
+              <p>Financeiro</p>
+            </div>
+            <div class="sobre_fundadores">
+              <img class="quemsomos_img" src="./imagens/person3.jfif" alt="Fundador 03">
+              <p>Cristina Santos</p>
+              <p>Comercial</p>
+            </div>
+            <div class="sobre_fundadores">
+              <img class="quemsomos_img" src="./imagens/person4.jfif" alt="Fundador 04">
+              <p>Emma Simpson</p>
+              <p>Marketing</p>
+            </div>
+          </div>
+        </div>
+        <!--row-->
+
+
+
+
+        <!-- icone seta pra cima,inicia Hide,com scroll 400 aparece -->
+        <div> <a href="#cabecalho">
+            <img id="icone_subir" src="./imagens/arrow-up-square.svg" role="img" aria-label="up" alt="ir pro topo">
+          </a>
+        </div>
+      </main>
+      <!-- ################# FIM MAIN ################################-->
+      <aside id="lateral" class="col-md-3">
+        <!-- video1 -->
+        <div class="d-flex">
+          <iframe width="220" height="150" src="https://www.youtube.com/embed/GzifafySI-M" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></li>
+          <p>Que tal aprender umas receitas saudáveis?Clique no video ao lado</p>
+        </div>
+        <!-- video 2 -->
+        <div class="d-flex">
+          <iframe width="220" height="150" src="https://www.youtube.com/embed/LONn-MajUWQ" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></li>
+          <p>Veja como é facil fazer lanche paras as crianças! Clique no video ao lado</p>
+        </div>
+        <!-- video 3 -->
+        <div class="d-flex">
+          <iframe width="220" height="150" src="https://www.youtube.com/embed/fFadAkbfHwI" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></li>
+          <p>Previna osteoporose com uma alimentação mais saudável.</p>
+        </div>
+        <!-- fim videos -->
+      </aside>
+
+    </div><!-- row MAIN e ASIDE-->
+
+    <!-- Conteiner final, direitos autorais, links de acesso as redes sociais e ícone para voltar ao topo -->
+    <footer id="rodape">
+      <div>
+        <a href="https://www.facebook.com/soulnatura" target="_blanck">
+          <img class="ImgFooter" src="./imagens/facebook.png" alt="facebook"></a>
+        <a href="https://www.instagram.com/soulnatura/" target="_blanck">
+          <img class="ImgFooter" src="./imagens/instagram.svg" alt="Instagram"></a>
+        <a href="https://www.youtube.com/soulnatura" target="_blanck">
+          <img class="ImgFooter" src="./imagens/youtube.png" alt="YouTube"></a>
+      </div>
+      <div class="copyright">© Copyright Soul Natura 2021</div>
+      <div class="copyright">Contato: (71)-1234-45654</div>
+    </footer>
+
+  </section><!-- container-fluid-->
+  <!-- scripts necessarios em ordem bootstrap 4.6 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+  <!-- fim bootstrap -->
+  <!-- script do requisito scroll -->
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 100) {
+          $("#icone_subir").css("display", "block");
+        } else {
+          $("#icone_subir").css("display", "none");
+        }
+      });
+      //fim scroll
+
+      //smooth scrool  
+      // Add smooth scrolling to all links
+      $("#icone_subir a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 1200, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });//icone subir click
+    });//document.ready
+  </script>
+</body>
+
+</html>
